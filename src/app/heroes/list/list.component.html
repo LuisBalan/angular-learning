@@ -1,0 +1,23 @@
+<p>list works!</p>
+
+<div *ngIf = 'heroeIndicator; else notDeleted'>
+    <span>Deleted hero: </span>
+    <span>{{deletedHeroe}}</span>
+</div>
+
+<!-- <div *ngIf="!heroeIndicator">
+</div> -->
+
+<ng-template #notDeleted>
+    <span>No one heroe has been deleted</span>
+</ng-template>
+
+<br>   
+    <button (click)="deleteHeroe()">Delete heroe</button>
+<br>
+
+<ul>
+    <li *ngFor="let heroe of heroes; let i = index">
+        {{i}}  {{heroe}}
+    </li>
+</ul>
