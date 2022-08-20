@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root', //component name
+  selector: 'app-root',
+  //component name
   templateUrl: './app.component.html',
   //styleUrls: ['./app.component.css']
   template: `<span>{{base}}</span>`
