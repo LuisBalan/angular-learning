@@ -1,2 +1,65 @@
-<h1>Dragon Ball Z</h1>
+<h1>Dragon Ball Z  {{newCustom.name}}</h1>
 <hr>
+<div class="row">
+    <h3>Personajes</h3>
+    <div class="col">
+        <hr>
+        <ul>
+            <li>Krillin - 700</li>
+            <li>Goku - 15,000</li>
+            <li>Vegeta - 8,500</li>
+        </ul>
+    </div>
+    
+    <div class="col">
+        <h3>Add</h3>
+        <hr>
+        <!-- <form (ngSubmit) = 'add($event)'>
+            <input type="text" placeholder="Name">
+            <input type="number" placeholder="Strength">
+        </form> -->
+
+        <!-- <form (submit) = 'add($event)'>
+            <input
+            type="text"
+            placeholder="Name"
+            [value] = "newCustom.name"
+            (input) = "changeName()"
+            >
+            <input 
+            type="number"
+            placeholder="Strength"
+            [value] = "newCustom.strength"
+            >
+            <button type="submit">
+                Add
+            </button>
+        </form> -->
+
+        <!-- Second way -->
+        <form (ngSubmit) = 'add()'>
+            <input
+            type="text"
+            placeholder="Name"
+            name = "name"
+            [(ngModel)] = "newCustom.name"
+            >
+            
+            <!-- Previous form -->
+            <!-- [value] = "newCustom.name"
+            (input) = "changeName($event)" -->
+            
+            
+            
+            <input 
+            type="number"
+            placeholder="Strength"
+            name = "strength"
+            [(ngModel)] = "newCustom.strength"
+            >
+            <button type="submit">
+                Add
+            </button>
+        </form>
+        <!-- [value] = "newCustom.strength" -->
+    </div>
