@@ -7,11 +7,6 @@ interface Custom {
   strength: number
 }
 
-interface Custom {
-  name: string;
-  strength: number
-}
-
 @Component({
   selector: 'app-main-page',
   templateUrl: './main-page.component.html',
@@ -19,9 +14,20 @@ interface Custom {
 
 export class MainPageComponent {
 
+  customs: Custom[] = [
+    {
+      name: "Goku",
+      strength: 15000
+    },
+    {
+      name: "Vegeta",
+      strength: 7500
+    }
+  ];
+
   newCustom: Custom = {
-    name: 'Trucks',
-    strength: 14000
+    name: '',
+    strength: 0
   };
 
   error: boolean = true;
@@ -29,7 +35,13 @@ export class MainPageComponent {
   errorMessage: string = "An error has occurred";
 
   add(){
-    console.log(this.newCustom);
+    if(this.newCustom.name.trim().length === 0){
+      return;
+    }else{
+      this.newCustom.name = 
+      this.customs.push(this.newCustom)
+    }
+    // console.log(this.newCustom);
   };
 
   changeName(event: any){
