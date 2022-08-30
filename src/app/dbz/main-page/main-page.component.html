@@ -2,14 +2,8 @@
 <h1>Dragon Ball Z {{newCustom.strength}}</h1>
 <hr>
 <div class="row">
-    <h3>Personajes</h3>
-    <div class="col">
-        <hr>
-        <ul>
-            <li *ngFor="let custom of customs">
-                {{custom.name}} - {{custom.strength | number}}
-            </li>
-        </ul>
+    <app-customs [customs]="customs">
+    </app-customs>
     </div>
     
     <div class="col">

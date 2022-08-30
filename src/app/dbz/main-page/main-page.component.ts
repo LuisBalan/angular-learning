@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Custom } from '../interfaces/dbz.interfaces';
 
-interface Custom {
-  name: string,
-  strength: number
-}
+// interface Custom {
+//   name: string,
+//   strength: number
+// }
 
 @Component({
   selector: 'app-main-page',

@@ -1,0 +1,8 @@
+<h3>Personajes</h3>
+<div class="col">
+    <hr>
+    <ul>
+        <li *ngFor="let custom of customs">
+            {{custom.name}} - {{custom.strength | number}}
+        </li>
+    </ul>
