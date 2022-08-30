@@ -1,11 +1,14 @@
 <h1>Dragon Ball Z  {{newCustom.name}}</h1>
+<h1>Dragon Ball Z {{newCustom.strength}}</h1>
 <hr>
 <div class="row">
     <h3>Personajes</h3>
     <div class="col">
         <hr>
         <ul>
-            <li *ngFor="let custom of customs">{{custom.name}} - {{custom.strength}}</li>
+            <li *ngFor="let custom of customs">
+                {{custom.name}} - {{custom.strength | number}}
+            </li>
         </ul>
     </div>
     
@@ -41,7 +44,6 @@
             placeholder="Name"
             name = "name"
             [(ngModel)] = "newCustom.name"
-            
             >
             
             <!-- Previous form -->

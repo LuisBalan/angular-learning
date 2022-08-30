@@ -35,14 +35,17 @@ export class MainPageComponent {
   errorMessage: string = "An error has occurred";
 
   add(){
-    if(this.newCustom.name.trim().length === 0){
-      return;
-    }else{
-      this.newCustom.name = 
-      this.customs.push(this.newCustom)
+    if(this.newCustom.name.trim().length === 0){return};
+    this.customs.push(this.newCustom)
+    this.newCustom = {
+      name: '',
+      strength: 0
     }
-    // console.log(this.newCustom);
   };
+
+    // }
+    // console.log(this.newCustom);
+
 
   changeName(event: any){
     console.log(event.target.value);
