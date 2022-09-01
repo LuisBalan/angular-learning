@@ -7,6 +7,4 @@ import { Custom } from '../interfaces/dbz.interfaces';
 })
 export class CustomsComponent {
   @Input() customs: Custom[] = [] ;
-
-
 }
