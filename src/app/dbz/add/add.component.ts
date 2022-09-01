@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Custom } from '../interfaces/dbz.interfaces';
 
 @Component({
@@ -8,19 +8,24 @@ import { Custom } from '../interfaces/dbz.interfaces';
 
 export class AddComponent {
 
-  @Input() customs: Custom[] = [];
   @Input() newCustom: Custom = {
     name: '',
     strength: 0
   };
+  @ Output() onNewCustom: EventEmitter<Custom> = new EventEmitter();
 
   add(){
     if(this.newCustom.name.trim().length === 0){return};
-    this.customs.push(this.newCustom)
+    console.log(this.newCustom);
+    this.onNewCustom.emit(this.newCustom);
     this.newCustom = {
       name: '',
       strength: 0
     };
-    console.log(this.customs)
   };
+
+
+
+
+
 };

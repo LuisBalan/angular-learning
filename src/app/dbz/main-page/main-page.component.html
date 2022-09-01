@@ -2,61 +2,20 @@
 <h1>Dragon Ball Z {{newCustom.strength}}</h1> -->
 <hr>
 <div class="row">
-    <app-customs [customs]="customs">
-    </app-customs>
+    <div col="col">
+        <app-customs
+        [customs]="customs"
+        >
+        </app-customs>
     </div>
+    
     
     <div class="col">
         <app-add
-        [customs]="customs"
-        [newCustom] ="newCustom">    
+        [newCustom] ="newCustom"
+        (onNewCustom) = "addNewCustom($event)"
+        >    
         </app-add>
-        <!-- <h3>Add</h3>
-        <hr> -->
-        <!-- <form (ngSubmit) = 'add($event)'>
-            <input type="text" placeholder="Name">
-            <input type="number" placeholder="Strength">
-        </form> -->
-
-        <!-- <form (submit) = 'add($event)'>
-            <input
-            type="text"
-            placeholder="Name"
-            [value] = "newCustom.name"
-            (input) = "changeName()"
-            >
-            <input 
-            type="number"
-            placeholder="Strength"
-            [value] = "newCustom.strength"
-            >
-            <button type="submit">
-                Add
-            </button>
-        </form> -->
-
-        <!-- Second way -->
-        <!-- <form (ngSubmit) = 'add()'>
-            <input
-            type="text"
-            placeholder="Name"
-            name = "name"
-            [(ngModel)] = "newCustom.name"
-            > -->
-            
-            <!-- Previous form -->
-            <!-- [value] = "newCustom.name"
-            (input) = "changeName($event)" -->
-            
-            <!-- <input 
-            type="number"
-            placeholder="Strength"
-            name = "strength"
-            [(ngModel)] = "newCustom.strength"
-            >
-            <button type="submit">
-                Add
-            </button>
-        </form> -->
-        <!-- [value] = "newCustom.strength" -->
     </div>
+</div>
+    

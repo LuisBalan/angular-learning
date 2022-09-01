@@ -52,4 +52,9 @@ export class MainPageComponent {
     console.log(event.target.value);
   };
 
+  addNewCustom(arg: Custom){
+    console.log("Main page component");
+    this.customs.push(arg);
+  };
+
 };
