@@ -1,8 +1,10 @@
+import { ThisReceiver } from '@angular/compiler';
 import { NgModule } from '@angular/core';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CustomsComponent } from '../customs/customs.component';
 import { Custom } from '../interfaces/dbz.interfaces';
+import { DbzService } from '../services/dbz.service';
 
 // interface Custom {
 //   name: string,
@@ -23,20 +25,15 @@ export class MainPageComponent {
     // }
     // console.log(this.newCustom);
 
-    customs: Custom[] = [
-      {
-        name: "Goku",
-        strength: 1500
-      },
-      {
-        name: "Vegeta",
-        strength: 7500
-      }
-    ]
+    // customs: Custom[] = [];
 
   newCustom: Custom = {
       name: 'Maestro Roshi',
       strength: 1000
+    };
+
+    get customs():Custom[]{
+      return this.dbzService.customs;
     };
   
     add(){
@@ -55,6 +52,9 @@ export class MainPageComponent {
   addNewCustom(arg: Custom){
     console.log("Main page component");
     this.customs.push(arg);
+  };
+
+  constructor(private dbzService: DbzService){
   };
 
 };
